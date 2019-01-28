@@ -96,8 +96,8 @@ summ_animal_weight = 0
 
 print('')
 
-for animal, weit in animal_dict.items():
-    for loop in weit:
+for animal, wt in animal_dict.items():
+    for loop in wt:
         summ_animal_weight += loop.weight
         print(loop.species, loop.name, 'весит',loop.weight, 'кг')
         if loop.weight > the_heavy:
