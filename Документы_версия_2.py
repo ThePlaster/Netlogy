@@ -139,7 +139,6 @@ def add_shelf(directories_dict):
 
 def print_name(documents_list):
   print('')
-
   try:
     for name in documents_list:
       first_name, last_name = name['name'].split(' ')
