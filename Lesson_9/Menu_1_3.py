@@ -22,14 +22,15 @@ def menu():
   person_count =()
   dish_dict = {}
 
+  
   def get_shop_list_by_dishes(dishes, person_count):
-
     for food_name in dishes:
       help_list = {}
 
       for key in cook_book.get(food_name):
         help_list = key.pop('ingridient_name')
         key['quantity'] = int(key.get('quantity')) * person_count
+        
         if  help_list in dish_dict:
           quant_dich = int(dish_dict.get(help_list).get('quantity'))
           key['quantity'] = quant_dich + int(key.get('quantity'))
@@ -37,8 +38,9 @@ def menu():
         else:
           dish_dict.setdefault(help_list, key)
 
-    print(*dish_dict.items(), sep = '\n')
+    print(dish_dict, sep = '\n')
 
   get_shop_list_by_dishes(['Омлет', 'Фахитос'], 2)
 
+  
 menu()
