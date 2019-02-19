@@ -7,10 +7,12 @@ def read_menu():
       name = line.strip()
       num = int(eat_list.readline())
       cook_book.setdefault(name,[])
+      
       for loop in range(num):
         ing = eat_list.readline().strip().split(' | ')
         cook_book[name].append({'ingridient_name':ing[0],
         'quantity':int(ing[1]), 'measure':ing[2]})
+        
       eat_list.readline()
 
 
@@ -18,7 +20,6 @@ dishes = []
 person_count =()
 
 def get_shop_list_by_dishes(dishes, person_count):
-
   dich_dict = {}
   for food_name in dishes:
     for ingrid in cook_book.get(food_name):
@@ -36,5 +37,6 @@ def get_shop_list_by_dishes(dishes, person_count):
 
   print(dich_dict, sep = '\n')
 
+  
 read_menu()
 get_shop_list_by_dishes(['Омлет', 'Фахитос'], 3)
